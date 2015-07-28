@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBAction func recordAudio(sender: UIButton) {
         //TODO: Show text "recording in progress"
         //TODO: Record the user's voice
+        recordingStatus.hidden = false
         
         println("in recordAudio")
     }
