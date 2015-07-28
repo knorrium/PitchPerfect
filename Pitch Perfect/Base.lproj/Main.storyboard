@@ -39,6 +39,9 @@
                             <constraint firstItem="1nN-d3-fhv" firstAttribute="centerX" secondItem="U8W-cP-q0x" secondAttribute="centerX" constant="-0.5" id="UZ8-9K-73p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordingStatus" destination="U8W-cP-q0x" id="RFl-TO-o4x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

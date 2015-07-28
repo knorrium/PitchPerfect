@@ -27,5 +27,7 @@ class ViewController: UIViewController {
         
         println("in recordAudio")
     }
+    
+    @IBOutlet weak var recordingStatus: UILabel!
 }
 
