@@ -13,6 +13,8 @@ class PlaySoundsViewController: UIViewController {
 
     var audioPlayer:AVAudioPlayer!
     
+    @IBOutlet weak var btnStop: UIButton!
+    @IBOutlet weak var btnPlayFast: UIButton!
     @IBOutlet weak var btnSnail: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,20 @@ class PlaySoundsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBAction func stopAudio(sender: UIButton) {
+        println("stopAudio")
+        audioPlayer.stop()
+    }
+
+    
+    @IBAction func playFastAudio(sender: UIButton) {
+        println("PlayFast")
+        audioPlayer.stop()
+        audioPlayer.rate = 2.0
+        audioPlayer.play()
+    }
+
     
     @IBAction func playSlowAudio(sender: UIButton) {
         println("PlaySlow")

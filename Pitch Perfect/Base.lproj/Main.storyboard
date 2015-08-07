@@ -17,17 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPd-9x-iQx">
-                                <rect key="frame" x="448" y="119" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPd-9x-iQx">
+                                <rect key="frame" x="454" y="118" width="100" height="100"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ig5-7j-7kg"/>
+                                    <constraint firstAttribute="height" constant="100" id="tif-WC-AN8"/>
+                                </constraints>
+                                <state key="normal" image="fast@2x-iphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playFastAudio:" destination="xrW-OE-q8L" eventType="touchUpInside" id="eaP-f9-Zgi"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eew-jP-xaJ">
-                                <rect key="frame" x="81" y="119" width="100" height="100"/>
-                                <state key="normal" image="slow@2x-iphone">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="155" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZh-IG-7CF">
+                                <rect key="frame" x="223" y="480" width="155" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qsy-cx-N2t"/>
+                                    <constraint firstAttribute="width" constant="100" id="teK-JY-PMc"/>
+                                </constraints>
+                                <state key="normal" image="stop2x-iphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="xrW-OE-q8L" eventType="touchUpInside" id="Jwh-x5-sEY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eew-jP-xaJ">
+                                <rect key="frame" x="46" y="118" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1Rb-8M-ev4"/>
+                                    <constraint firstAttribute="width" constant="100" id="8ZS-ya-Cbl"/>
+                                </constraints>
+                                <state key="normal" image="slow@2x-iphone" backgroundImage="slow@2x-iphone"/>
                                 <connections>
                                     <action selector="playSlowAudio:" destination="xrW-OE-q8L" eventType="touchUpInside" id="CMV-6f-mAq"/>
                                 </connections>
@@ -35,12 +58,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eew-jP-xaJ" firstAttribute="top" secondItem="xY7-et-wXF" secondAttribute="bottom" constant="55" id="1Pc-97-ue3"/>
-                            <constraint firstItem="eew-jP-xaJ" firstAttribute="leading" secondItem="gf1-ly-Xx5" secondAttribute="leadingMargin" constant="65" id="BZZ-wF-mv0"/>
+                            <constraint firstItem="7jA-04-XIo" firstAttribute="top" secondItem="oZh-IG-7CF" secondAttribute="bottom" constant="20" id="0o3-vu-tHJ"/>
+                            <constraint firstAttribute="centerX" secondItem="oZh-IG-7CF" secondAttribute="centerX" constant="-0.5" id="7KZ-3s-HTf"/>
+                            <constraint firstItem="JPd-9x-iQx" firstAttribute="top" secondItem="xY7-et-wXF" secondAttribute="bottom" constant="54" id="BpS-O9-BqF"/>
+                            <constraint firstItem="eew-jP-xaJ" firstAttribute="leading" secondItem="gf1-ly-Xx5" secondAttribute="leadingMargin" constant="30" id="iPO-N1-eb6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JPd-9x-iQx" secondAttribute="trailing" constant="30" id="pun-aB-Fw2"/>
+                            <constraint firstItem="eew-jP-xaJ" firstAttribute="top" secondItem="xY7-et-wXF" secondAttribute="bottom" constant="54" id="yzj-us-MPM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnPlayFast" destination="JPd-9x-iQx" id="tJu-0f-1J0"/>
                         <outlet property="btnSnail" destination="eew-jP-xaJ" id="xX2-xY-eIf"/>
+                        <outlet property="btnStop" destination="oZh-IG-7CF" id="ibZ-EX-vX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kao-yn-B8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fast@2x-iphone" width="200" height="200"/>
         <image name="microphone2x-iphone" width="200" height="200"/>
         <image name="slow@2x-iphone" width="200" height="200"/>
         <image name="stop2x-iphone" width="100" height="100"/>
