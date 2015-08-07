@@ -13,7 +13,7 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var btnSnail: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
         // Do any additional setup after loading the view.
     }
 
