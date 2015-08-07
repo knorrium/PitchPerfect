@@ -11,6 +11,7 @@ import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder:AVAudioRecorder!
+    var recordedAudio:RecordedAudio!
     
     @IBOutlet weak var btnRecord: UIButton!
     
@@ -30,6 +31,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+        recordedAudio = RecordedAudio()
+        recordedAudio.filePathUrl = recorder.url
+        recordedAudio.title = recorder.url.lastPathComponent
         
     }
 
