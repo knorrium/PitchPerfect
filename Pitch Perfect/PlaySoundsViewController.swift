@@ -10,6 +10,7 @@ import UIKit
 
 class PlaySoundsViewController: UIViewController {
 
+    @IBOutlet weak var btnSnail: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,9 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func playSlowAudio(sender: UIButton) {
+        
+    }
     /*
     // MARK: - Navigation
 
