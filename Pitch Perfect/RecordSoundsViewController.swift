@@ -34,6 +34,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordedAudio = RecordedAudio()
         recordedAudio.filePathUrl = recorder.url
         recordedAudio.title = recorder.url.lastPathComponent
+        performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         
     }
 
