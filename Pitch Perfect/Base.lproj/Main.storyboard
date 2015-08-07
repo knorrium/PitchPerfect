@@ -5,6 +5,24 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="275-zE-cwa">
+            <objects>
+                <viewController id="xrW-OE-q8L" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xY7-et-wXF"/>
+                        <viewControllerLayoutGuide type="bottom" id="7jA-04-XIo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gf1-ly-Xx5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kao-yn-B8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="206" y="86"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +56,7 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3iz-1Z-7Qp"/>
+                                    <segue destination="xrW-OE-q8L" kind="show" id="WBX-t9-HQZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,6 +71,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FU6-7d-Zn6"/>
                     <connections>
+                        <outlet property="btnRecord" destination="1nN-d3-fhv" id="m9q-Ch-fEC"/>
                         <outlet property="btnStop" destination="8HT-wW-Zqs" id="LjY-ms-39L"/>
                         <outlet property="recordingStatus" destination="U8W-cP-q0x" id="RFl-TO-o4x"/>
                     </connections>

@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var btnRecord: UIButton!
 
+    @IBOutlet weak var btnRecord: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         btnStop.hidden = true
+        btnRecord.enabled = true
     }
 
     override func didReceiveMemoryWarning() {
