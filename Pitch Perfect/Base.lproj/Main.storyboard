@@ -28,6 +28,9 @@
                                 <state key="normal" image="slow@2x-iphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playSlowAudio:" destination="xrW-OE-q8L" eventType="touchUpInside" id="CMV-6f-mAq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +40,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnSnail" destination="eew-jP-xaJ" id="z5g-gr-CBi"/>
+                        <outlet property="btnSnail" destination="eew-jP-xaJ" id="xX2-xY-eIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kao-yn-B8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
