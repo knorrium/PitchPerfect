@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="206" y="86"/>
         </scene>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8HT-wW-Zqs" secondAttribute="bottom" constant="20" id="iHk-Yp-Yy5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FU6-7d-Zn6"/>
+                    <navigationItem key="navigationItem" title="Record" id="FU6-7d-Zn6"/>
                     <connections>
                         <outlet property="btnRecord" destination="1nN-d3-fhv" id="m9q-Ch-fEC"/>
                         <outlet property="btnStop" destination="8HT-wW-Zqs" id="LjY-ms-39L"/>
