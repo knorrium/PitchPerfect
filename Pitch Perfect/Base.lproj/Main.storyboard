@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e46-R8-dIx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -50,14 +50,33 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8HT-wW-Zqs" secondAttribute="bottom" constant="20" id="iHk-Yp-Yy5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FU6-7d-Zn6"/>
                     <connections>
-                        <outlet property="btnRecord" destination="1nN-d3-fhv" id="rLp-6Z-xHW"/>
                         <outlet property="btnStop" destination="8HT-wW-Zqs" id="LjY-ms-39L"/>
                         <outlet property="recordingStatus" destination="U8W-cP-q0x" id="RFl-TO-o4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="921" y="-37"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ldG-jM-Q8K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e46-R8-dIx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QSq-h0-IOX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="fzR-Pg-qWp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5R-2w-kAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="-780"/>
         </scene>
     </scenes>
     <resources>
