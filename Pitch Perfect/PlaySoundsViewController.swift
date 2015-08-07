@@ -55,7 +55,7 @@ class PlaySoundsViewController: UIViewController {
         println("PlaySlow")
         audioPlayer.stop()
         audioPlayer.currentTime = 0.0
-        audioPlayer.rate = 0.1
+        audioPlayer.rate = 0.5
         audioPlayer.play()
     }
     /*
