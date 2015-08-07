@@ -15,6 +15,7 @@
 		D75447871B672F3100FC9AF5 /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75447861B672F3100FC9AF5 /* Pitch_PerfectTests.swift */; };
 		D7F9EF1A1B74642000085504 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F9EF191B74642000085504 /* PlaySoundsViewController.swift */; };
 		D7F9EF1C1B746B7F00085504 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D7F9EF1B1B746B7F00085504 /* movie_quote.mp3 */; };
+		D7F9EF1E1B748A3100085504 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F9EF1D1B748A3100085504 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D75447861B672F3100FC9AF5 /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 		D7F9EF191B74642000085504 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		D7F9EF1B1B746B7F00085504 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
+		D7F9EF1D1B748A3100085504 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		D75447621B672F3000FC9AF5 = {
 			isa = PBXGroup;
 			children = (
+				D7F9EF1D1B748A3100085504 /* RecordedAudio.swift */,
 				D754476D1B672F3000FC9AF5 /* Pitch Perfect */,
 				D75447831B672F3100FC9AF5 /* Pitch PerfectTests */,
 				D754476C1B672F3000FC9AF5 /* Products */,
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F9EF1E1B748A3100085504 /* RecordedAudio.swift in Sources */,
 				D75447731B672F3000FC9AF5 /* RecordSoundsViewController.swift in Sources */,
 				D7F9EF1A1B74642000085504 /* PlaySoundsViewController.swift in Sources */,
 				D75447711B672F3000FC9AF5 /* AppDelegate.swift in Sources */,
