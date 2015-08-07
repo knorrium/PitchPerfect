@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var btnRecord: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +31,14 @@ class ViewController: UIViewController {
         //TODO: Record the user's voice
         recordingStatus.hidden = false
         btnStop.hidden = false
+        btnRecord.enabled = false
         println("in recordAudio")
     }
     
     @IBAction func stopRecording(sender: UIButton) {
         recordingStatus.hidden = true
         btnStop.hidden = true
+        btnRecord.enabled = true
     }
     @IBOutlet weak var recordingStatus: UILabel!
     @IBOutlet weak var btnStop: UIButton!

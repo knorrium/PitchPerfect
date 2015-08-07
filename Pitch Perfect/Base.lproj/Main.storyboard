@@ -51,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnRecord" destination="1nN-d3-fhv" id="rLp-6Z-xHW"/>
                         <outlet property="btnStop" destination="8HT-wW-Zqs" id="LjY-ms-39L"/>
                         <outlet property="recordingStatus" destination="U8W-cP-q0x" id="RFl-TO-o4x"/>
                     </connections>
