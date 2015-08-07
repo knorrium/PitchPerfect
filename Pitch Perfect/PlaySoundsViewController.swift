@@ -14,6 +14,10 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     
+    @IBAction func playChipmunk(sender: UIButton) {
+    
+    }
+    
     @IBOutlet weak var btnStop: UIButton!
     @IBOutlet weak var btnPlayFast: UIButton!
     @IBOutlet weak var btnSnail: UIButton!
