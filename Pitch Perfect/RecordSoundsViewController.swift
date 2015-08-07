@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RecordSoundsViewController: UIViewController {
-
+    var audioRecorder:AVAudioRecorder!
+    
     @IBOutlet weak var btnRecord: UIButton!
     
     override func viewDidLoad() {
@@ -31,6 +33,25 @@ class RecordSoundsViewController: UIViewController {
     @IBAction func recordAudio(sender: UIButton) {
         //TODO: Show text "recording in progress"
         //TODO: Record the user's voice
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        
+        let currentDateTime = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "ddMMyyyy-HHmmss"
+        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+        let pathArray = [dirPath, recordingName]
+        let filePath = NSURL.fileURLWithPathComponents(pathArray)
+        println(filePath)
+        
+        var session = AVAudioSession.sharedInstance()
+        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+        
+        audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
+        audioRecorder.meteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.record()
+        
+        
         recordingStatus.hidden = false
         btnStop.hidden = false
         btnRecord.enabled = false
@@ -38,6 +59,10 @@ class RecordSoundsViewController: UIViewController {
     }
     
     @IBAction func stopRecording(sender: UIButton) {
+        audioRecorder.stop()
+        var audioSession = AVAudioSession.sharedInstance()
+        audioSession.setActive(false, error: nil)
+        
         recordingStatus.hidden = true
         btnStop.hidden = true
         btnRecord.enabled = true
