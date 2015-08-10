@@ -36,40 +36,42 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func stopAudio(sender: UIButton) {
-        println("stopAudio")
+    func resetPlayer() {
         audioPlayer.stop()
+        audioEngine.stop()
+        audioPlayer.currentTime = 0.0
+        audioPlayer.rate = 1.0
+        audioEngine.reset()
+    }
+    
+    @IBAction func stopAudio(sender: UIButton) {
+        resetPlayer()
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioPlayer.currentTime = 0.0
+        resetPlayer()
         audioPlayer.rate = 2.0
         audioPlayer.play()
     }
-
     
     @IBAction func playSlowAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioPlayer.currentTime = 0.0
+        resetPlayer()
         audioPlayer.rate = 0.5
         audioPlayer.play()
     }
     
     @IBAction func playDarthVader(sender: AnyObject) {
+        resetPlayer()
         playAudioWithVariablePitch(-1000)
     }
     
     @IBAction func playChipmunk(sender: UIButton) {
+        resetPlayer()
         playAudioWithVariablePitch(1000)
     }
 
     
     func playAudioWithVariablePitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
