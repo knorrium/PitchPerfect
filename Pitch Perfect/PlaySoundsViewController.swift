@@ -17,7 +17,7 @@ class PlaySoundsViewController: UIViewController {
     var audioFile:AVAudioFile!
     
     @IBAction func playChipmunk(sender: UIButton) {
-    
+        playAudioWithVariablePitch(1000)
     }
     
     @IBOutlet weak var btnStop: UIButton!
