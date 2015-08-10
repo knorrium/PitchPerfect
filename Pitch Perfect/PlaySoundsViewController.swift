@@ -57,16 +57,13 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playDarthVader(sender: AnyObject) {
-        resetPlayer()
         playAudioWithVariablePitch(-1000)
     }
     
     @IBAction func playChipmunk(sender: UIButton) {
-        resetPlayer()
         playAudioWithVariablePitch(1000)
     }
 
-    
     func playAudioWithVariableRate(rate: Float) {
         resetPlayer()
         audioPlayer.rate = rate
@@ -74,6 +71,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariablePitch(pitch: Float){
+        resetPlayer()
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
