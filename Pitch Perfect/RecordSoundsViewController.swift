@@ -25,6 +25,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         btnStop.hidden = true
         btnRecord.enabled = true
         recordingStatus.text = "Tap to Record"
