@@ -11,32 +11,19 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
-    @IBAction func playDarthVader(sender: AnyObject)
-    {
-        playAudioWithVariablePitch(-1000)
-    }
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     var audioEngine: AVAudioEngine!
     var audioFile:AVAudioFile!
     
-    @IBAction func playChipmunk(sender: UIButton) {
-        playAudioWithVariablePitch(1000)
-    }
-    
     @IBOutlet weak var btnStop: UIButton!
     @IBOutlet weak var btnPlayFast: UIButton!
     @IBOutlet weak var btnSnail: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
-        
-//        if var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
-//            var filePathUrl = NSURL.fileURLWithPath(filePath)
-//        } else {
-//            println("the file path is empty")
-//        }
         
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.enableRate = true
@@ -53,10 +40,8 @@ class PlaySoundsViewController: UIViewController {
         println("stopAudio")
         audioPlayer.stop()
     }
-
     
     @IBAction func playFastAudio(sender: UIButton) {
-        println("PlayFast")
         audioPlayer.stop()
         audioPlayer.currentTime = 0.0
         audioPlayer.rate = 2.0
@@ -65,12 +50,20 @@ class PlaySoundsViewController: UIViewController {
 
     
     @IBAction func playSlowAudio(sender: UIButton) {
-        println("PlaySlow")
         audioPlayer.stop()
         audioPlayer.currentTime = 0.0
         audioPlayer.rate = 0.5
         audioPlayer.play()
     }
+    
+    @IBAction func playDarthVader(sender: AnyObject) {
+        playAudioWithVariablePitch(-1000)
+    }
+    
+    @IBAction func playChipmunk(sender: UIButton) {
+        playAudioWithVariablePitch(1000)
+    }
+
     
     func playAudioWithVariablePitch(pitch: Float){
         audioPlayer.stop()

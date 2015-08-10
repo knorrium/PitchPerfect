@@ -14,6 +14,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var recordedAudio:RecordedAudio!
     
     @IBOutlet weak var btnRecord: UIButton!
+    @IBOutlet weak var recordingStatus: UILabel!
+    @IBOutlet weak var btnStop: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +52,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func recordAudio(sender: UIButton) {
-        //TODO: Show text "recording in progress"
-        //TODO: Record the user's voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         
-//        let currentDateTime = NSDate()
-//        let formatter = NSDateFormatter()
-//        formatter.dateFormat = "ddMMyyyy-HHmmss"
-//        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
 
         let recordingName = "my_audio.wav"
         
@@ -74,8 +70,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.prepareToRecord()
         audioRecorder.record()
 
-        
-        
         recordingStatus.hidden = false
         btnStop.hidden = false
         btnRecord.enabled = false
@@ -91,7 +85,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         btnStop.hidden = true
         btnRecord.enabled = true
     }
-    @IBOutlet weak var recordingStatus: UILabel!
-    @IBOutlet weak var btnStop: UIButton!
+
 }
 
