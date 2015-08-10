@@ -20,11 +20,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        recordingStatus.hidden = false
+
     }
     
     override func viewWillAppear(animated: Bool) {
         btnStop.hidden = true
         btnRecord.enabled = true
+        recordingStatus.text = "Tap to Record"
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +71,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.prepareToRecord()
         audioRecorder.record()
 
-        recordingStatus.hidden = false
+        recordingStatus.text = "Recording"
         btnStop.hidden = false
         btnRecord.enabled = false
         println("in recordAudio")
@@ -79,7 +82,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
         
-        recordingStatus.hidden = true
+        recordingStatus.text = "Finished recording"
         btnStop.hidden = true
         btnRecord.enabled = true
     }
