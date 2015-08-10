@@ -16,19 +16,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var btnRecord: UIButton!
     @IBOutlet weak var recordingStatus: UILabel!
     @IBOutlet weak var btnStop: UIButton!
-    
+    @IBOutlet weak var btnPause: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        recordingStatus.hidden = false
-
+        initialStatus()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        btnStop.hidden = true
-        btnRecord.enabled = true
-        recordingStatus.text = "Tap to Record"
+        initialStatus()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,29 +50,74 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    @IBAction func recordAudio(sender: UIButton) {
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        
+    @IBAction func pauseRecording(sender: UIButton) {
+        pausedStatus()
+    }
 
-        let recordingName = "my_audio.wav"
+    @IBAction func startRecording(sender: UIButton) {
+        if (recordingStatus.text == "Tap to Record") {
+            let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+            
+            
+            let recordingName = "my_audio.wav"
+            
+            let pathArray = [dirPath, recordingName]
+            let filePath = NSURL.fileURLWithPathComponents(pathArray)
+            println(filePath)
+            
+            var session = AVAudioSession.sharedInstance()
+            session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+            
+            audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
+            audioRecorder.delegate = self
+            audioRecorder.meteringEnabled = true
+            audioRecorder.prepareToRecord()
+            audioRecorder.record()
+        } else {
+            audioRecorder.record()
+        }
         
-        let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        println(filePath)
+        recordStatus()
+    }
+    
+    func pausedStatus() {
+        audioRecorder.pause()
         
-        var session = AVAudioSession.sharedInstance()
-        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        
-        audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
-        audioRecorder.delegate = self
-        audioRecorder.meteringEnabled = true
-        audioRecorder.prepareToRecord()
-        audioRecorder.record()
+        btnPause.hidden = true
+        btnRecord.hidden = false
+        btnStop.hidden = false
+        btnRecord.enabled = true
 
-        recordingStatus.text = "Recording"
+        recordingStatus.text = "Tap to Resume"
+    }
+    
+    func recordStatus() {
+        btnPause.hidden = false
+        btnRecord.hidden = false
         btnStop.hidden = false
         btnRecord.enabled = false
-        println("in recordAudio")
+        
+        recordingStatus.text = "Recording"
+    }
+    
+    func initialStatus() {
+        btnPause.hidden = true
+        btnStop.hidden = true
+        btnRecord.enabled = true
+        btnRecord.hidden = false
+        
+        recordingStatus.hidden = false
+        recordingStatus.text = "Tap to Record"
+    }
+    
+    func finishedStatus() {
+        btnPause.hidden = true
+        btnStop.hidden = true
+        btnRecord.enabled = true
+        btnRecord.hidden = false
+        
+        recordingStatus.hidden = false
+        recordingStatus.text = "Finished recording"
     }
     
     @IBAction func stopRecording(sender: UIButton) {
@@ -83,9 +125,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
         
-        recordingStatus.text = "Finished recording"
-        btnStop.hidden = true
-        btnRecord.enabled = true
+        finishedStatus()
     }
 
 }
