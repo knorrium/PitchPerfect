@@ -55,6 +55,16 @@
                                     <action selector="stopAudio:" destination="xrW-OE-q8L" eventType="touchUpInside" id="Jwh-x5-sEY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dva-CV-uVt">
+                                <rect key="frame" x="454" y="302" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4wl-Hl-PUi"/>
+                                    <constraint firstAttribute="height" constant="100" id="NIF-gX-8Qv"/>
+                                </constraints>
+                                <state key="normal" image="darthvader@2x-iphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC3-La-P89">
                                 <rect key="frame" x="46" y="302" width="100" height="100"/>
                                 <constraints>
@@ -73,6 +83,7 @@
                         <constraints>
                             <constraint firstItem="7jA-04-XIo" firstAttribute="top" secondItem="oZh-IG-7CF" secondAttribute="bottom" constant="20" id="0o3-vu-tHJ"/>
                             <constraint firstItem="VC3-La-P89" firstAttribute="leading" secondItem="gf1-ly-Xx5" secondAttribute="leadingMargin" constant="30" id="2AG-Ch-kud"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dva-CV-uVt" secondAttribute="trailing" constant="30" id="2RL-Hh-BvN"/>
                             <constraint firstAttribute="centerX" secondItem="oZh-IG-7CF" secondAttribute="centerX" constant="-0.5" id="7KZ-3s-HTf"/>
                             <constraint firstItem="JPd-9x-iQx" firstAttribute="top" secondItem="xY7-et-wXF" secondAttribute="bottom" constant="54" id="BpS-O9-BqF"/>
                             <constraint firstItem="eew-jP-xaJ" firstAttribute="leading" secondItem="gf1-ly-Xx5" secondAttribute="leadingMargin" constant="30" id="iPO-N1-eb6"/>
@@ -169,6 +180,7 @@
     </scenes>
     <resources>
         <image name="chipmunk@2x-iphone" width="200" height="200"/>
+        <image name="darthvader@2x-iphone" width="200" height="200"/>
         <image name="fast@2x-iphone" width="200" height="200"/>
         <image name="microphone2x-iphone" width="200" height="200"/>
         <image name="slow@2x-iphone" width="200" height="200"/>
