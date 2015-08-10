@@ -11,6 +11,10 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
+    @IBAction func playDarthVader(sender: AnyObject)
+    {
+        playAudioWithVariablePitch(-1000)
+    }
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     var audioEngine: AVAudioEngine!
