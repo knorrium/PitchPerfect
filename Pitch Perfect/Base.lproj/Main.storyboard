@@ -116,17 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nN-d3-fhv">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
-                                <state key="normal" image="microphone2x-iphone">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="60e-1p-6Vk"/>
-                                </connections>
-                            </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8W-cP-q0x">
-                                <rect key="frame" x="264" y="408" width="73" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8W-cP-q0x">
+                                <rect key="frame" x="264.5" y="410" width="72.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -140,10 +131,24 @@
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3iz-1Z-7Qp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nN-d3-fhv">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="O0G-bt-VNI"/>
+                                    <constraint firstAttribute="width" constant="100" id="ocx-ZJ-blM"/>
+                                </constraints>
+                                <state key="normal" image="microphone2x-iphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="60e-1p-6Vk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="8HT-wW-Zqs" secondAttribute="centerX" id="DwI-3S-unp"/>
+                            <constraint firstItem="U8W-cP-q0x" firstAttribute="top" secondItem="1nN-d3-fhv" secondAttribute="bottom" constant="10" id="IBk-Lb-QgP"/>
                             <constraint firstAttribute="centerY" secondItem="1nN-d3-fhv" secondAttribute="centerY" id="L2Z-dF-XdE"/>
                             <constraint firstAttribute="centerX" secondItem="1nN-d3-fhv" secondAttribute="centerX" id="QUi-eJ-fnM"/>
                             <constraint firstItem="1nN-d3-fhv" firstAttribute="centerX" secondItem="U8W-cP-q0x" secondAttribute="centerX" constant="-0.5" id="UZ8-9K-73p"/>
