@@ -90,6 +90,9 @@
                                 <state key="normal" image="echo@2x-iphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playEcho:" destination="xrW-OE-q8L" eventType="touchUpInside" id="0U6-aI-8re"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

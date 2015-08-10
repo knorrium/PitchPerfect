@@ -64,6 +64,29 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(1000)
     }
 
+    @IBAction func playEcho(sender: AnyObject) {
+        playAudioWithDelay(0.2)
+    }
+    
+    func playAudioWithDelay(delay: Float) {
+        resetPlayer()
+
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+
+        var addDelayEffect = AVAudioUnitDelay()
+        addDelayEffect.delayTime = NSTimeInterval(delay)
+        audioEngine.attachNode(addDelayEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: addDelayEffect, format: nil)
+        audioEngine.connect(addDelayEffect, to: audioEngine.outputNode, format: nil)
+
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()   
+    }
+    
     func playAudioWithVariableRate(rate: Float) {
         resetPlayer()
         audioPlayer.rate = rate
